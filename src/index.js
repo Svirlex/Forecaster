@@ -3,7 +3,7 @@
 const weatherForm = document.querySelector(".weatherForm");
 const cityInput = document.querySelector(".cityInput");
 const card = document.querySelector(".card");
-const apiKey ="f4b623d55d1ccb91a57818c433af2501";
+const apiKey ="Your Open Weather Map API";
 
 
 
