@@ -3,12 +3,10 @@
 const weatherForm = document.querySelector(".weatherForm");
 const cityInput = document.querySelector(".cityInput");
 const card = document.querySelector(".card");
-// const apiKey ="f4b623d55d1ccb91a57818c433af2501";
+const apiKey ="f4b623d55d1ccb91a57818c433af2501";
 
 
-const apiKey = 'YOUR_API_KEY';
-const city = 'Moscow';
-const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
 
 
 var isDay = true;
