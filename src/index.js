@@ -3,7 +3,13 @@
 const weatherForm = document.querySelector(".weatherForm");
 const cityInput = document.querySelector(".cityInput");
 const card = document.querySelector(".card");
-const apiKey ="f4b623d55d1ccb91a57818c433af2501";
+// const apiKey ="f4b623d55d1ccb91a57818c433af2501";
+
+
+const apiKey = 'YOUR_API_KEY';
+const city = 'Moscow';
+const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
+
 
 var isDay = true;
 
@@ -48,11 +54,11 @@ async function getWeatherData(city){
 
 
 
+
 function displayWeatherInfo(data){
     console.log(data);
     const {coord: {lon, lat},
            dt: time,
-           timezone: timezoneOffset,
            name: city, 
            main: {temp, humidity},
            timezone: tzOffset,
@@ -75,6 +81,7 @@ function displayWeatherInfo(data){
     
     // Extract the local hour
     const localHour = localDate.getUTCHours();
+
     
     console.log(localHour);
 
@@ -93,22 +100,22 @@ function displayWeatherInfo(data){
     tempDisplay.textContent = `${(temp - 273.15).toFixed(1)}°C`;
     humidityDisplay.textContent = `Влажность: ${humidity}%`;
     descDisplay.textContent = description;
-    weatherEmoji.textContent = getWeatherEmoji(id);
-
+    
     cityDisplay.classList.add("cityDisplay");
     tempDisplay.classList.add("tempDisplay");
     humidityDisplay.classList.add("humidityDisplay");
     descDisplay.classList.add("descDisplay");
     weatherEmoji.classList.add("weatherEmoji");
-
+    
     card.appendChild(cityDisplay);
     card.appendChild(tempDisplay);
     card.appendChild(humidityDisplay);
     card.appendChild(descDisplay);
     card.appendChild(weatherEmoji);
-
+    
     console.log(localHour);
     changeBackground(localHour);
+    weatherEmoji.textContent = getWeatherEmoji(id);
 
 
     
